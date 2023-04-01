@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4189f698d1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <title>Assignment1</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            text-decoration:none;
+            list-style:none;
+            box-sizing: border-box;
+
+        }
+
+        .img{
+            position: absolute;
+            left: 100px;
+            top: 36px;
+        }
+
+        .option{
+            float: right;
+            margin-top: 15px;
+        }
+
+        nav ul li a{
+            display: inline;
+            line-height: 16px;
+            color: #555555; 
+            font-family: 'Roboto';
+            font-style: normal;
+            font-size: 14px;
+            letter-spacing: -0.3px;
+        }
+
+
+        button{
+            position: absolute;
+            top: 36px;
+            right: 100px;
+            padding-left: 8.04px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 8.04px;
+            border: none;
+            border-radius: 6px;
+            background-color: #EE9591 ;
+            box-shadow: 10px 10px 30px rgba(234, 141, 136, 0.4);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .icon{
+            float: right;
+            padding-top: 20px;
+            font-size: 25px;
+            margin-right: 17px;
+            color: rgb(105, 100, 100);
+            cursor: pointer;
+            display: none;
+        }
+
+        #check{
+            display: none;
+        }
+
+        @media (max-width:992px) {
+            nav ul li{
+                font-size: 16px; 
+                font-weight: bold;   
+            }
+
+            .navbar li a:hover{
+                color:rgb(32, 29, 29);
+            }
+
+            .icon{
+                display: block;
+            }
+
+            ul{
+                position: fixed;
+                width: 100%;
+                height: 35vh;
+                top: 40px;
+                left: -100%;
+                text-align: left;
+                transition:all .5s;
+                margin-top: 0;
+                padding-top: 15px;
+                padding-left: 7px;
+            }
+
+            nav ul li{
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            #check:checked ~ ul{
+                left: 0;
+            }
+            #grad{
+                visibility:hidden;
+            }
+
+        }
+        
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;            
+            position: absolute;
+            width: 593px;
+            height: 456px;
+            left: 100px;
+            top: 232px;
+        }
+
+        .heading{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 80px;
+            letter-spacing: 0.3px;
+            color: #555555;
+            flex: none;
+            order: 0;
+            flex-grow: 0; 
+        }
+
+        .para{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: -0.3px;
+            color: #888888;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+
+        #Fline{
+            margin-top: 30px;
+        }
+       
+
+        #grad{
+            position: absolute;
+            width: 578px;
+            height: 506px;
+            left: 672px;
+            top: 132px;
+            background: linear-gradient(292.92deg, #EE9591 22.51%, rgba(238, 149, 145, 0.187951) 48.04%, rgba(238, 149, 145, 0.0567374) 54.16%, rgba(238, 149, 145, 0) 59.92%);
+            border-radius: 16px;
+        }
+        
+        #Fasilitas{
+            position: absolute;
+            top: 46px;
+            bottom: 50px;
+            right: 481px;
+             
+        }
+        #Beautypreneur{
+            position: absolute;
+            top: 46px;
+            bottom: 50px;
+            right:363px;
+        }
+        #BrandPartner{
+            position: absolute;
+            top: 46px;
+            right: 250px;
+        }
+    
+        #Vector{
+            position: absolute;
+            top: 74px;
+            right: 78.93px;
+
+        }
+        #Vector1{
+            position: absolute;
+            left: 112.04px;
+            right: 270.92px;
+            top: 107.58px;
+        }
+        #Vector2{
+            position: absolute;
+            left: 56.17px;
+            right: 280.12px;
+            top: 117.35px;
+            bottom: 35.41px;
+            border-radius: 27px;
+        }
+        #Vector3{
+            position: absolute;
+            top: 117.18px;
+            left: 56.33px;
+        }
+        #Vector4{
+            position: absolute;
+            left: 115.94px;
+            top: 112.32px;
+        }
+        #Vector5{
+            position: absolute;
+            top: 117.18px;
+            left: 56.17px;
+        }
+        #Vector6{
+            position: absolute;
+            top:117.18px;
+            left: 56.33px;
+            box-sizing: border-box;
+        }
+        #Vector7{
+            position: absolute;
+            top:117.18px;
+            left: 56.33px;
+            right: 280.09px;
+            background: #FFFFFF;
+        }
+        #Vector8{
+            position: absolute;
+            top: 395.85px;
+            left: 293.9px;
+        }
+        #Vector9{
+            position: absolute;
+            left: 272.13px;
+            top: 379.67px;
+        }
+        #Vector10{
+            position: absolute;
+            top: 375.42px;
+            left: 262.16px;
+        }
+        #Vector11{
+            position: absolute;
+            top: 389.09px;
+            left: 262.2px;
+        }
+        #Vector12{
+            position: absolute;
+            top:430.13px;
+            left: 318.7px;
+        }
+        #Vector13{
+            position: absolute;
+            top: 413.97px;
+            left: 297.11px;
+        }
+        #Vector14{
+            position: absolute;
+            top: 409.71px;
+            left: 286.96px;
+        }
+        #Vector15{
+            position: absolute;
+            top: 423.39px;
+            left: 287.05px;
+        }
+        #Vector16{
+            position: absolute;
+            top: 443.2px;
+            left: 286.99px;
+        }
+        #Vector17{
+            position: absolute;
+            top: 427.3px;
+            left: 265.4px;
+        }
+        #Vector18{
+            position: absolute;
+            top: 422.78px;
+            left: 255.25px;
+        }
+        #Vector19{
+            position: absolute;
+            top: 436.46px;
+            left: 255.34px;
+        }
+        #Vector20{
+            position: absolute;
+            top: 399.09px;
+            left: 339.4px;
+        }
+        #Vector21{
+            position: absolute;
+            top: 227.1px;
+            left: 353.93px;
+        }
+        #Vector22{
+            position: absolute;
+            top: 399.33px;
+            left: 339.4px;
+        }
+        #Vector23{
+            position: absolute;
+            top: 375.34px;
+            left: 82.03px;
+        }
+        #Vector24{
+            position: absolute;
+            top:350.35px ;
+            left: 53.37px;
+        }
+        #Vector25{
+            position: absolute;
+            top: 340.46px;
+            left: 43.55px;
+        }
+        #Vector26{
+            position: absolute;
+            top: 366.1px;
+            left: 11.43px;
+        }
+        #Vector27{
+            position: absolute;
+            top: 345.64px;
+            right: 487.94px;
+        }
+        #Vector28{
+            position: absolute;
+            top: 335.75px;
+            right: 478px;
+        }
+        #Vector29{
+            position: absolute;
+            top: 433.07px;
+        }
+        #Vector30{
+            position: absolute;
+            left: 439px;
+        }
+        #Vector31{
+            position: absolute;
+            top: 125.03px;
+            left: 439.07px;
+        }
+        #Vector32{
+            position: absolute;
+            top: 126.03px;
+            left: 417px;
+        }
+        #Vector33{
+            position: absolute;
+            top: 175.18px;
+            left: 430.57px;
+        }
+        #Vector34{
+            position: absolute;
+            top: 125.18px;
+            left: 350.57px;
+        }
+        #Vector35{
+            position: absolute;
+            top: 76.03px;
+            left: 337px;
+        }
+        #Vector36{
+            position: absolute;
+            left: 358.86px;
+        }
+        #Vector37{
+            position: absolute;
+            top: 75.03px;
+            left: 359.07px;
+        }
+        #dot{
+            position: absolute;
+            top: 482px;
+            left: 554px;
+            background: #F7F7F7;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        #Ellipse{
+            position: absolute;
+            left: 0px;
+            top: 309px;
+        }
+        #Ellipse1{
+            position: absolute;
+            top: 309px;
+            left: 125px;
+        }
+        #Ellipse2{
+            position: absolute;
+            top: 309px;
+            left: 300px;
+        }
+        #Ellipse3{
+            position: absolute;
+            left: 5.39px;
+            top: 314.5px;
+        }
+        #Ellipse4{
+            position: absolute;
+            left: 130.4px;
+            top: 314px;
+        }
+        #Ellipse5{
+            position: absolute;
+            left: 305.4px;
+            top: 314px;
+        }
+        #text{
+            position: absolute;
+            top: 311px;
+            left: 30px;
+        }
+        #text1{
+            position: absolute;
+            top: 311px;
+            left: 155px;
+        }
+        #text2{
+            position: absolute;
+            top: 311px;
+            left: 330px;
+        }
+
+    </style>
+</head>
+<body> 
+    <!-- Navigation bar Start -->
+    <nav class="navbar">
+        <img src="Image.svg" class="img" >
+        <input type="checkbox"id="check"requried>
+        <label class="icon" for="check">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="option">
+             <li id="Fasilitas"><a href="#"> Fasilitas</a></li>
+             <li id="Beautypreneur"><a href="#">Beautypreneur</a></li>
+             <li id="BrandPartner"><a href="#">Brand Partner</a></li>
+             <li id="button"><a href="#"><button>Registrasi</button></a></li>
+             
+        </ul>
+       </nav>
+       <!-- Navigation bar End -->
+
+       <div class="container">
+       <p class="heading">Pasti berat </p>
+       <p class="heading">kalo lari sendirian.</p>
+       <p class="para" id="Fline">Setiap hal pasti butuh hal lain untuk membersamai.</p>
+        <p class="para">Begitupun dengan bisnis, Beautieslfie.id hadir untuk membersamai </p>
+        <p class="para">kalian untuk menjadi Beautypreneur.Siapapun kamu!!</p>
+        <div id="container">
+             <img src="Ellipse.svg" id="Ellipse">
+             <img src="Ellipse1.svg" id="Ellipse3">
+             <span id="text">Mahasiswi</span>
+             <img src="Ellipse.svg" id="Ellipse1">
+             <img src="Ellipse1.svg" id="Ellipse4">
+             <span id="text1">Ibu Rumah Tangga</span>
+             <img src="Ellipse.svg" id="Ellipse2">
+             <img src="Ellipse1.svg" id="Ellipse5">
+             <span id="text2">Career Hunter</span>
+        </div>
+     </div>
+
+<!-- Photo Gallery Start -->
+<div id="grad">  
+    <img src="Vector.svg" id="Vector">
+    <img src="Vector23.svg" id="Vector29">
+    <img src="Vector21.svg" id="Vector28"> 
+    <img src="Vector20.svg" id="Vector27">
+    <img src="Vector22.svg" id="Vector26">
+    <img src="Vector21.svg" id="Vector25"> 
+    <img src="Vector20.svg" id="Vector24"> 
+    <img src="Vector19.svg" id="Vector23"> 
+    <img src="Vector5.svg" id="Vector5">
+    <img src="Vector6.svg" id="Vector6">
+    <img src="Vector7.png" id="Vector7">
+    <img src="Vector1.svg" id="Vector1"> 
+    <img src="Vector4.svg" id="Vector4">
+    <img src="Vector2.svg" id="Vector2">
+    <img src="Vector3.svg" id="Vector3">
+    <img src="Vector18.svg" id="Vector21">
+    <img src="Line.svg" id="Vector22">
+    <img src="Vector17.svg" id="Vector20">
+    <img src="Vector15.svg" id="Vector19">
+    <img src="Vector14.svg" id="Vector18">
+    <img src="Vector13.svg" id="Vector17">
+    <img src="Vector16.svg" id="Vector16">
+    <img src="Vector15.svg" id="Vector15">
+    <img src="Vector14.svg" id="Vector14">
+    <img src="Vector13.svg" id="Vector13">
+    <img src="Vector12.svg" id="Vector12">
+    <img src="Vector11.svg" id="Vector11">
+    <img src="Vector10.svg" id="Vector10">
+    <img src="Vector9.svg" id="Vector9">
+    <img src="Vector8.svg" id="Vector8">
+    <img src="Vector25.svg" id="Vector33">
+    <img src="Vector24.svg" id="Vector32">
+    <img src="Line1.svg" id="Vector30">
+    <img src="Line2.svg" id="Vector31">
+    <img src="Vector25.svg" id="Vector34">
+    <img src="Vector24.svg" id="Vector35">
+    <img src="Line3.svg" id="Vector36">
+    <img src="Line2.svg" id="Vector37">
+    <span id="dot"></span>
+    <span id="dot1"></span>
+    <span id="dot2"></span>
+    <span id="dot3"></span>
+    <span id="dot4"></span>
+    <span id="dot5"></span>
+    <span id="dot6"></span>
+    <span id="dot7"></span>
+    <span id="dot8"></span>
+    <span id="dot9"></span>
+    <span id="dot10"></span>
+    <span id="dot11"></span>
+    <span id="dot12"></span>
+    <span id="dot13"></span>
+    <span id="dot14"></span>
+    <span id="dot15"></span>
+    <span id="dot16"></span>
+    <span id="dot17"></span>
+    <span id="dot18"></span>
+    <span id="dot19"></span>
+    <span id="dot20"></span>
+    <span id="dot21"></span>
+    <span id="dot22"></span>
+    <span id="dot23"></span>
+    <span id="dot24"></span>
+    <span id="dot25"></span>
+    <span id="dot26"></span>
+    <span id="dot27"></span>
+    <span id="dot28"></span>
+    <span id="dot29"></span>
+    <span id="dot30"></span>
+    <span id="dot31"></span>
+    <span id="dot32"></span>
+    <span id="dot33"></span>
+    <span id="dot34"></span>
+    <span id="dot35"></span>
+    <span id="dot36"></span>
+    <span id="dot37"></span>
+    <span id="dot38"></span>
+    <span id="dot39"></span>
+    <span id="dot40"></span>
+    <span id="dot41"></span>
+    <span id="dot42"></span>
+    <span id="dot43"></span>
+    <span id="dot44"></span>
+    <span id="dot45"></span>
+    <span id="dot46"></span>
+    <span id="dot47"></span>
+    <span id="dot48"></span>
+    <span id="dot49"></span>
+    <span id="dot50"></span>
+    <span id="dot51"></span>
+    <span id="dot52"></span>
+    <span id="dot53"></span>
+    <span id="dot54"></span>
+    <span id="dot55"></span>
+    <span id="dot56"></span>
+    <span id="dot57"></span>
+    <span id="dot58"></span>
+    <span id="dot59"></span>
+    <span id="dot60"></span>
+</div>
+<!-- Photo Gallery End -->
+   
+</body>
+</html>
